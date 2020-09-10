@@ -3,6 +3,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.TelegramBotsApi;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import com.google.inject.internal.cglib.core.$LocalVariablesSorter;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -13,6 +16,23 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 public class bot extends TelegramLongPollingBot {
+
+        public static void main(String[] args) {
+            ApiContextInitializer.init();
+            TelegramBotsApi botsApi = new TelegramBotsApi();
+
+            try {
+                bot bot1 = new bot();
+                botsApi.registerBot(bot1);
+
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
 
 
     public void sendMsg(Message message, String text) {
