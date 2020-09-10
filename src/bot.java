@@ -82,7 +82,7 @@ public class bot extends TelegramLongPollingBot {
         }
 
         if (message.getText().equals("/start") || message.getText().equals("/help")) {
-            sendMsg(message, "/add -- add notes \n/get -- get notes\n/clear -- remove all notes\n/rem num -- remove notes number");
+            sendMsg(message, "/get -- get notes\n/clear -- remove all notes\n/rem num -- remove notes number\nand just write to add notes");
         }
 
         if (message.getText().equals("/clear")) {
